@@ -13,9 +13,11 @@ $variabile='lorem iplor dolor alicem neminlorue puslorum ante bibli';
 //creazione variabile contente la funzione del conteggio numeri del paragrafo
 $variabileLength=strlen($variabile);
 //Parola censurata passata tramite get
-$variabileGet=$_GET['lor'];
+$variabileGet=$_GET['variabileGet'];
 //creazione variabile contenete la funzione per modificare pezzi di una stringa
-$censored=str_replace('lor','***',$variabile);
+$censored=str_replace($variabileGet ,'***', $variabile);
+//
+$variabileLengthMin=strlen($censored);
 ?>
 <p><?php
 echo $variabile;?></p>
@@ -26,6 +28,10 @@ echo $variabileGet;?></span>
 <span>
     <?php
     echo $censored;?>
+</span>
+<span>
+    <?php
+    echo $variabileLengthMin?>
 </span>
 </body>
 </html>
